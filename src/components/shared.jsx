@@ -2,9 +2,9 @@ import { useState } from "react";
 
 // V5 Design Tokens
 export const C = {
-  bg:"#ECEEF1", panel:"#F6F7F9", card:"#FFFFFF", black:"#1A1D23",
-  red:"#ff7276", yellow:"#edf100", blue:"#05c3da", green:"#34d399",
-  g50:"#6B7280", g70:"#9CA3AF", g88:"#E5E7EB", g94:"#F3F4F6",
+  bg:"#C0C0C0", panel:"#D0D0D0", card:"#FFFFFF", black:"#1B2021",
+  red:"#ff7276", yellow:"#edf100", blue:"#004E98", green:"#34d399",
+  g50:"#1B2021", g70:"#1B2021", g88:"#A8A8A8", g94:"#CACACA",
 };
 export const ff = "'Helvetica Neue',Helvetica,Arial,sans-serif";
 export const hd = { fontWeight:600, letterSpacing:"0.04em", textTransform:"uppercase" };
