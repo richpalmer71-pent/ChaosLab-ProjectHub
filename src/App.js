@@ -145,8 +145,8 @@ export default function App(){
       setAdminMsg("DEMO MODE LOADED");setTimeout(()=>setAdminMsg(null),3000);
     }else{
       // Fallback to in-memory demo if database fails
-      setJobNum("PEN-2025-0042");setBrand("Speedo");setTitle("Summer 25 Launch");
-      setObj("Drive awareness and sales for the Summer 2025 Speedo collection across all digital channels.");
+      setJobNum("PEN-2025-0042");setBrand("VortexSwim");setTitle("Summer 25 Launch");
+      setObj("Drive awareness and sales for the Summer 2025 VortexSwim collection across all digital channels.");
       setLoc(["UK (ENG)","DE (GER)","FR (FR)"]);setSd("2025-03-01");setEd("2025-06-15");setHd2("2025-05-20");
       setCh(["web","email","paid"]);
       setView("project");setShowAdmin(false);
@@ -361,7 +361,7 @@ export default function App(){
     <div style={{display:"flex",flexDirection:"column",gap:14}}>
       <Card>
         <div style={{fontSize:11,...hd,color:C.g50,fontFamily:ff,marginBottom:16}}>PROJECT DETAILS</div>
-        <div className="hub-grid-3" style={g(3)}><Field label="JOB NUMBER" required><Input value={jobNum} onChange={v=>{setJobNum(v);markDirty("overview");}} placeholder="e.g. PEN-001"/></Field><Field label="BRAND" required><Input value={brand} onChange={v=>{setBrand(v);markDirty("overview");}} placeholder="e.g. Speedo"/></Field><Field label="CAMPAIGN TITLE" required><Input value={title} onChange={v=>{setTitle(v);markDirty("overview");}} placeholder="e.g. Summer 25"/></Field></div>
+        <div className="hub-grid-3" style={g(3)}><Field label="JOB NUMBER" required><Input value={jobNum} onChange={v=>{setJobNum(v);markDirty("overview");}} placeholder="e.g. PEN-001"/></Field><Field label="BRAND" required><Input value={brand} onChange={v=>{setBrand(v);markDirty("overview");}} placeholder="e.g. VortexSwim"/></Field><Field label="CAMPAIGN TITLE" required><Input value={title} onChange={v=>{setTitle(v);markDirty("overview");}} placeholder="e.g. Summer 25"/></Field></div>
         <div style={{marginTop:16}}><Field label="CAMPAIGN OBJECTIVE" required><TextArea value={objective} onChange={v=>{setObj(v);markDirty("overview");}} placeholder="What is this campaign trying to achieve?"/></Field></div>
       </Card>
       <Card>

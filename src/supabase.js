@@ -254,9 +254,9 @@ export async function loadDemoData() {
   // Create demo project
   const project = await saveProject({
     job_number: 'PEN-2025-0042',
-    brand: 'Speedo',
+    brand: 'VortexSwim',
     title: 'Summer 25 Launch',
-    objective: 'Drive awareness and sales for the Summer 2025 Speedo collection across all digital channels.',
+    objective: 'Drive awareness and sales for the Summer 2025 VortexSwim collection across all digital channels.',
     locales: ['UK (ENG)', 'DE (GER)', 'FR (FR)'],
     start_date: '2025-03-01',
     end_date: '2025-06-15',
@@ -274,7 +274,7 @@ export async function loadDemoData() {
     asset_bank_link: 'https://assetbank.chaos-lab.com/speedo',
     design_files: 'https://figma.com/speedo-ss25',
     copy_toolkit: 'On-brand tone of voice. Active, confident, inclusive.',
-    brand_guidelines: 'Follow Speedo brand guidelines v4.2',
+    brand_guidelines: 'Follow VortexSwim brand guidelines v1.0',
   });
 
   // Web assets
@@ -290,7 +290,7 @@ export async function loadDemoData() {
   // Email assets
   await saveEmailAssets(project.id, [
     { name: 'Launch Email', sendDate: '2025-06-01', handoverDate: '2025-05-20', collapsed: false, activeTab: 0, parts: [
-      { id: 3, locale: 'UK (ENG)', briefStatus: 'awaiting_approval', subjectLine: 'Make Waves This Summer', preHeader: 'New Speedo collection is here', heroImage: '', heading: 'Dive Into Summer 25', bodyCopy: 'Our latest collection combines cutting-edge technology with bold design.', cta: 'Shop Now', secondaryCta: 'Explore', notes: '', figmaLink: '' }
+      { id: 3, locale: 'UK (ENG)', briefStatus: 'awaiting_approval', subjectLine: 'Make Waves This Summer', preHeader: 'New VortexSwim collection is here', heroImage: '', heading: 'Dive Into Summer 25', bodyCopy: 'Our latest collection combines cutting-edge technology with bold design.', cta: 'Shop Now', secondaryCta: 'Explore', notes: '', figmaLink: '' }
     ]},
     { name: 'Promo Follow-Up', sendDate: '2025-06-10', handoverDate: '2025-05-28', collapsed: true, activeTab: 0, parts: [
       { id: 4, locale: 'UK (ENG)', briefStatus: 'with_copy', subjectLine: "Don't Miss Out", preHeader: '', heroImage: '', heading: 'Summer Essentials', bodyCopy: 'Get ready for the season with our top picks.', cta: 'Shop Now', secondaryCta: '', notes: '', figmaLink: '' }
