@@ -229,27 +229,27 @@ export default function App(){
           </button>
 
           {/* Purge */}
-          {purgeStep===0&&<button onClick={()=>setPurgeStep(1)} style={{width:"100%",padding:"14px 20px",border:"1px solid #ef444444",...rad,background:"#ef444412",color:"#ef4444",fontSize:12,...hd,fontFamily:ff,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",gap:8}}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          {purgeStep===0&&<button onClick={()=>setPurgeStep(1)} style={{width:"100%",padding:"14px 20px",border:"1px solid #FF6B6B44",...rad,background:"#FF6B6B12",color:"#FF6B6B",fontSize:12,...hd,fontFamily:ff,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",gap:8}}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF6B6B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
             PURGE SYSTEM
           </button>}
 
-          {purgeStep===1&&<div style={{padding:"16px 20px",border:"1px solid #ef444444",...rad,background:"#ef444408"}}>
-            <div style={{fontSize:13,...hd,color:"#ef4444",fontFamily:ff,marginBottom:8}}>ARE YOU SURE?</div>
+          {purgeStep===1&&<div style={{padding:"16px 20px",border:"1px solid #FF6B6B44",...rad,background:"#FF6B6B08"}}>
+            <div style={{fontSize:13,...hd,color:"#FF6B6B",fontFamily:ff,marginBottom:8}}>ARE YOU SURE?</div>
             <div style={{fontSize:12,...bd,color:C.g50,fontFamily:ff,marginBottom:14,lineHeight:1.5}}>This will permanently delete all project data, briefs, profiles and settings. This cannot be undone.</div>
             <div style={{display:"flex",gap:8}}>
-              <button onClick={()=>setPurgeStep(2)} style={{flex:1,padding:"10px",border:"none",...rad,background:"#ef4444",color:C.card,fontSize:11,...hd,fontFamily:ff,cursor:"pointer"}}>YES, CONTINUE</button>
+              <button onClick={()=>setPurgeStep(2)} style={{flex:1,padding:"10px",border:"none",...rad,background:"#FF6B6B",color:C.card,fontSize:11,...hd,fontFamily:ff,cursor:"pointer"}}>YES, CONTINUE</button>
               <button onClick={()=>{setPurgeStep(0);setPurgePw("");setPurgeError(false);}} style={{flex:1,padding:"10px",border:`1px solid ${C.g88}`,...rad,background:C.card,color:C.g50,fontSize:11,...hd,fontFamily:ff,cursor:"pointer"}}>CANCEL</button>
             </div>
           </div>}
 
-          {purgeStep===2&&<div style={{padding:"16px 20px",border:"1px solid #ef444444",...rad,background:"#ef444408"}}>
-            <div style={{fontSize:13,...hd,color:"#ef4444",fontFamily:ff,marginBottom:8}}>ENTER ADMIN PASSWORD</div>
+          {purgeStep===2&&<div style={{padding:"16px 20px",border:"1px solid #FF6B6B44",...rad,background:"#FF6B6B08"}}>
+            <div style={{fontSize:13,...hd,color:"#FF6B6B",fontFamily:ff,marginBottom:8}}>ENTER ADMIN PASSWORD</div>
             <div style={{display:"flex",gap:8}}>
-              <input type="password" value={purgePw} onChange={e=>{setPurgePw(e.target.value);setPurgeError(false);}} onKeyDown={e=>{if(e.key==="Enter"){if(purgePw==="chaoslab"){purgeAll();}else{setPurgeError(true);}}}} placeholder="Admin password" style={{...bi,flex:1,border:purgeError?"1px solid #ef4444":`1px solid ${C.g88}`}}/>
-              <button onClick={()=>{if(purgePw==="chaoslab"){purgeAll();}else{setPurgeError(true);}}} style={{padding:"10px 20px",border:"none",...rad,background:"#ef4444",color:C.card,fontSize:11,...hd,fontFamily:ff,cursor:"pointer"}}>PURGE</button>
+              <input type="password" value={purgePw} onChange={e=>{setPurgePw(e.target.value);setPurgeError(false);}} onKeyDown={e=>{if(e.key==="Enter"){if(purgePw==="chaoslab"){purgeAll();}else{setPurgeError(true);}}}} placeholder="Admin password" style={{...bi,flex:1,border:purgeError?"1px solid #FF6B6B":`1px solid ${C.g88}`}}/>
+              <button onClick={()=>{if(purgePw==="chaoslab"){purgeAll();}else{setPurgeError(true);}}} style={{padding:"10px 20px",border:"none",...rad,background:"#FF6B6B",color:C.card,fontSize:11,...hd,fontFamily:ff,cursor:"pointer"}}>PURGE</button>
             </div>
-            {purgeError&&<div style={{fontSize:11,...hd,color:"#ef4444",fontFamily:ff,marginTop:8}}>INCORRECT PASSWORD</div>}
+            {purgeError&&<div style={{fontSize:11,...hd,color:"#FF6B6B",fontFamily:ff,marginTop:8}}>INCORRECT PASSWORD</div>}
             <button onClick={()=>{setPurgeStep(0);setPurgePw("");setPurgeError(false);}} style={{marginTop:8,padding:"6px 14px",border:`1px solid ${C.g88}`,...rad,background:C.card,color:C.g50,fontSize:10,...hd,fontFamily:ff,cursor:"pointer"}}>CANCEL</button>
           </div>}
         </div>}
@@ -299,11 +299,11 @@ export default function App(){
           <div style={{fontSize:20,fontWeight:700,color:C.black,fontFamily:ff}}>{jobNum}</div>
         </Card>
         {/* Dropbox Folder Status */}
-        {dbxStatus&&<Card style={{marginBottom:10,padding:"12px 20px",borderLeft:`4px solid ${dbxStatus==="done"?C.green:dbxStatus==="error"?"#ef4444":C.blue}`}}>
+        {dbxStatus&&<Card style={{marginBottom:10,padding:"12px 20px",borderLeft:`4px solid ${dbxStatus==="done"?C.green:dbxStatus==="error"?"#FF6B6B":C.blue}`}}>
           <div style={{display:"flex",alignItems:"center",gap:10}}>
             {dbxStatus==="creating"&&<><div style={{width:14,height:14,border:`2px solid ${C.g88}`,borderTop:`2px solid ${C.blue}`,borderRadius:"50%",animation:"dbxspin 0.8s linear infinite"}}/><span style={{fontSize:11,...bd,color:C.blue,fontFamily:ff}}>Creating Dropbox folders...</span><style>{`@keyframes dbxspin{to{transform:rotate(360deg)}}`}</style></>}
             {dbxStatus==="done"&&<><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={C.green} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span style={{fontSize:11,...bd,color:C.green,fontFamily:ff}}>Dropbox folders created</span></>}
-            {dbxStatus==="error"&&<><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2.5" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span style={{fontSize:11,...bd,color:"#ef4444",fontFamily:ff}}>Failed — check Zapier</span><button onClick={()=>createDropboxFolders(jobNum,title,brand)} style={{marginLeft:8,padding:"4px 12px",border:`1px solid ${C.g88}`,...rad,background:C.card,color:C.g50,fontSize:9,...hd,fontFamily:ff,cursor:"pointer"}}>RETRY</button></>}
+            {dbxStatus==="error"&&<><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF6B6B" strokeWidth="2.5" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span style={{fontSize:11,...bd,color:"#FF6B6B",fontFamily:ff}}>Failed — check Zapier</span><button onClick={()=>createDropboxFolders(jobNum,title,brand)} style={{marginLeft:8,padding:"4px 12px",border:`1px solid ${C.g88}`,...rad,background:C.card,color:C.g50,fontSize:9,...hd,fontFamily:ff,cursor:"pointer"}}>RETRY</button></>}
           </div>
         </Card>}
         {!dbxStatus&&isRealJobNum(jobNum)&&<Card style={{marginBottom:10,padding:"12px 20px"}}>
@@ -324,10 +324,10 @@ export default function App(){
             </button>
           );})}
         </div>
-        {actionMsg&&<div style={{marginTop:14,padding:"10px 18px",background:projectStatus==="cancelled"?"#ef4444":projectStatus==="paused"?"#f59e0b":projectStatus==="archived"?C.g50:C.green,color:C.card,...rad,fontSize:12,...hd,fontFamily:ff,textAlign:"center"}}>{actionMsg}</div>}
-        {projectStatus!=="active"&&<div style={{marginTop:14,padding:"12px 18px",border:`1px solid ${projectStatus==="cancelled"?"#ef444433":projectStatus==="paused"?"#f59e0b33":C.g88}`,...rad,background:C.card,display:"flex",alignItems:"center",justifyContent:"center",gap:10}}>
-          <div style={{width:8,height:8,borderRadius:4,background:projectStatus==="cancelled"?"#ef4444":projectStatus==="paused"?"#f59e0b":C.g50}}/>
-          <span style={{fontSize:12,...hd,color:projectStatus==="cancelled"?"#ef4444":projectStatus==="paused"?"#f59e0b":C.g50,fontFamily:ff}}>PROJECT {projectStatus.toUpperCase()}</span>
+        {actionMsg&&<div style={{marginTop:14,padding:"10px 18px",background:projectStatus==="cancelled"?"#FF6B6B":projectStatus==="paused"?"#FFD93D":projectStatus==="archived"?C.g50:C.green,color:C.card,...rad,fontSize:12,...hd,fontFamily:ff,textAlign:"center"}}>{actionMsg}</div>}
+        {projectStatus!=="active"&&<div style={{marginTop:14,padding:"12px 18px",border:`1px solid ${projectStatus==="cancelled"?"#FF6B6B33":projectStatus==="paused"?"#FFD93D33":C.g88}`,...rad,background:C.card,display:"flex",alignItems:"center",justifyContent:"center",gap:10}}>
+          <div style={{width:8,height:8,borderRadius:4,background:projectStatus==="cancelled"?"#FF6B6B":projectStatus==="paused"?"#FFD93D":C.g50}}/>
+          <span style={{fontSize:12,...hd,color:projectStatus==="cancelled"?"#FF6B6B":projectStatus==="paused"?"#FFD93D":C.g50,fontFamily:ff}}>PROJECT {projectStatus.toUpperCase()}</span>
         </div>}
         <div style={{marginTop:20}}><ProjectActions onAction={handleProjectAction} projectStatus={projectStatus}/></div>
         <button onClick={()=>setView("dashboard")} style={{width:"100%",marginTop:10,padding:"12px 18px",border:`1px solid ${C.g88}`,...rad,background:C.panel,cursor:"pointer",fontFamily:ff,display:"flex",alignItems:"center",justifyContent:"center",gap:8}}>
@@ -344,10 +344,10 @@ export default function App(){
       <style>{GS}</style>
       <Sidebar view={view} setView={setView} jobNum={jobNum} open={sidebarOpen} setOpen={setSidebarOpen}/>
       <div className="main-content" style={{marginLeft:250,padding:"32px 40px 60px"}}>
-        {actionMsg&&<div style={{marginBottom:16,padding:"10px 18px",background:projectStatus==="cancelled"?"#ef4444":projectStatus==="paused"?"#f59e0b":projectStatus==="archived"?C.g50:C.green,color:C.card,...rad,fontSize:12,...hd,fontFamily:ff,textAlign:"center"}}>{actionMsg}</div>}
-        {projectStatus!=="active"&&<div style={{marginBottom:16,padding:"12px 18px",border:`1px solid ${projectStatus==="cancelled"?"#ef444433":projectStatus==="paused"?"#f59e0b33":C.g88}`,...rad,background:C.card,display:"flex",alignItems:"center",gap:10}}>
-          <div style={{width:8,height:8,borderRadius:4,background:projectStatus==="cancelled"?"#ef4444":projectStatus==="paused"?"#f59e0b":C.g50}}/>
-          <span style={{fontSize:12,...hd,color:projectStatus==="cancelled"?"#ef4444":projectStatus==="paused"?"#f59e0b":C.g50,fontFamily:ff}}>THIS PROJECT IS {projectStatus.toUpperCase()}</span>
+        {actionMsg&&<div style={{marginBottom:16,padding:"10px 18px",background:projectStatus==="cancelled"?"#FF6B6B":projectStatus==="paused"?"#FFD93D":projectStatus==="archived"?C.g50:C.green,color:C.card,...rad,fontSize:12,...hd,fontFamily:ff,textAlign:"center"}}>{actionMsg}</div>}
+        {projectStatus!=="active"&&<div style={{marginBottom:16,padding:"12px 18px",border:`1px solid ${projectStatus==="cancelled"?"#FF6B6B33":projectStatus==="paused"?"#FFD93D33":C.g88}`,...rad,background:C.card,display:"flex",alignItems:"center",gap:10}}>
+          <div style={{width:8,height:8,borderRadius:4,background:projectStatus==="cancelled"?"#FF6B6B":projectStatus==="paused"?"#FFD93D":C.g50}}/>
+          <span style={{fontSize:12,...hd,color:projectStatus==="cancelled"?"#FF6B6B":projectStatus==="paused"?"#FFD93D":C.g50,fontFamily:ff}}>THIS PROJECT IS {projectStatus.toUpperCase()}</span>
           {projectStatus==="paused"&&<button onClick={()=>handleProjectAction("resume")} style={{marginLeft:"auto",padding:"6px 14px",border:"none",...rad,background:C.green,color:C.card,fontSize:10,...hd,fontFamily:ff,cursor:"pointer"}}>RESUME</button>}
         </div>}
         <PageTitle title={label} sub={sub} accent={accent} onMenu={()=>setSidebarOpen(true)}/>
@@ -379,7 +379,7 @@ export default function App(){
               <div style={{fontSize:12,...hd,color:C.black,fontFamily:ff}}>DROPBOX PROJECT FOLDER</div>
               {dbxStatus==="creating"&&<div style={{display:"flex",alignItems:"center",gap:6,marginTop:4}}><div style={{width:12,height:12,border:`2px solid ${C.g88}`,borderTop:`2px solid ${C.blue}`,borderRadius:"50%",animation:"dbxspin 0.8s linear infinite"}}/><span style={{fontSize:11,...bd,color:C.blue,fontFamily:ff}}>Creating folder structure for <strong>{dbxFolder}</strong>...</span><style>{`@keyframes dbxspin{to{transform:rotate(360deg)}}`}</style></div>}
               {dbxStatus==="done"&&<div style={{fontSize:11,...bd,color:C.green,fontFamily:ff,marginTop:4}}>Folders created for <strong>{dbxFolder}</strong></div>}
-              {dbxStatus==="error"&&<div style={{fontSize:11,...bd,color:"#ef4444",fontFamily:ff,marginTop:4}}>Failed to create folders — check your Zapier connection</div>}
+              {dbxStatus==="error"&&<div style={{fontSize:11,...bd,color:"#FF6B6B",fontFamily:ff,marginTop:4}}>Failed to create folders — check your Zapier connection</div>}
               {!dbxStatus&&!dbxCreated&&<div style={{fontSize:11,...bd,color:C.g70,fontFamily:ff,marginTop:4}}>{isRealJobNum(jobNum)?"Ready to create project folders in Dropbox":"Enter a real job number above, then create your Dropbox folders"}</div>}
               {!dbxStatus&&dbxCreated&&<div style={{fontSize:11,...bd,color:C.g50,fontFamily:ff,marginTop:4}}>Folders exist for <strong style={{color:C.black}}>{dbxFolder}</strong></div>}
             </div>
@@ -440,11 +440,11 @@ export default function App(){
   return ML("MULTI-CHANNEL HUB","PROJECT BRIEF",C.red,
     <div style={{display:"flex",flexDirection:"column",gap:14,paddingBottom:80}}>
       {/* Dropbox Status */}
-      {dbxStatus&&<Card style={{padding:"14px 24px",borderLeft:`4px solid ${dbxStatus==="done"?C.green:dbxStatus==="error"?"#ef4444":C.blue}`}}>
+      {dbxStatus&&<Card style={{padding:"14px 24px",borderLeft:`4px solid ${dbxStatus==="done"?C.green:dbxStatus==="error"?"#FF6B6B":C.blue}`}}>
         <div style={{display:"flex",alignItems:"center",gap:10}}>
           {dbxStatus==="creating"&&<><div style={{width:16,height:16,border:`2px solid ${C.g88}`,borderTop:`2px solid ${C.blue}`,borderRadius:"50%",animation:"dbxspin 0.8s linear infinite"}}/><span style={{fontSize:12,...bd,color:C.blue,fontFamily:ff}}>Creating Dropbox folder structure for <strong>{dbxFolder}</strong>...</span><style>{`@keyframes dbxspin{to{transform:rotate(360deg)}}`}</style></>}
           {dbxStatus==="done"&&<><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={C.green} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span style={{fontSize:12,...bd,color:C.green,fontFamily:ff}}>Dropbox folders created for <strong>{dbxFolder}</strong></span></>}
-          {dbxStatus==="error"&&<><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2.5" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span style={{fontSize:12,...bd,color:"#ef4444",fontFamily:ff}}>Failed to create Dropbox folders — check your Zapier connection</span><button onClick={()=>createDropboxFolders(jobNum,title,brand)} style={{marginLeft:8,padding:"5px 14px",border:`1px solid ${C.g88}`,...rad,background:C.card,color:C.g50,fontSize:10,...hd,fontFamily:ff,cursor:"pointer"}}>RETRY</button></>}
+          {dbxStatus==="error"&&<><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6B6B" strokeWidth="2.5" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span style={{fontSize:12,...bd,color:"#FF6B6B",fontFamily:ff}}>Failed to create Dropbox folders — check your Zapier connection</span><button onClick={()=>createDropboxFolders(jobNum,title,brand)} style={{marginLeft:8,padding:"5px 14px",border:`1px solid ${C.g88}`,...rad,background:C.card,color:C.g50,fontSize:10,...hd,fontFamily:ff,cursor:"pointer"}}>RETRY</button></>}
         </div>
       </Card>}
       {/* Manual Dropbox Button */}
@@ -589,7 +589,7 @@ export default function App(){
                 <div style={{display:"flex",alignItems:"center",gap:12,flex:1,minWidth:0}}>
                   <div style={{width:4,height:28,...rad,background:C.yellow,flexShrink:0}}/>
                   <span style={{fontSize:15,...hd,color:C.black,fontFamily:ff,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{titleDisplay||numStr}</span>
-                  {em.parts.length>1&&<span style={{padding:"2px 8px",...rad,background:C.yellow+"33",color:"#92400e",fontSize:9,...hd,fontFamily:ff,flexShrink:0}}>{em.parts.length} VARIANTS</span>}
+                  {em.parts.length>1&&<span style={{padding:"2px 8px",...rad,background:C.yellow+"33",color:C.yellow,fontSize:9,...hd,fontFamily:ff,flexShrink:0}}>{em.parts.length} VARIANTS</span>}
                 </div>
                 <div style={{display:"flex",alignItems:"center",gap:12,flexShrink:0}}>
                   <span style={{fontSize:11,...bd,color:C.g50,fontFamily:ff}}>{dateRange}</span>

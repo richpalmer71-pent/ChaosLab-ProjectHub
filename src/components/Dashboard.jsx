@@ -10,15 +10,15 @@ function useIsMobile(bp=768) {
 const PROJECT_STATUSES = [
   {key:"draft",label:"DRAFT",color:C.g70},
   {key:"briefing",label:"BRIEFING",color:C.blue},
-  {key:"in_progress",label:"IN PROGRESS",color:"#f59e0b"},
-  {key:"review",label:"REVIEW",color:"#8b5cf6"},
+  {key:"in_progress",label:"IN PROGRESS",color:"#FFD93D"},
+  {key:"review",label:"REVIEW",color:"#C084FC"},
   {key:"approved",label:"APPROVED",color:C.green},
   {key:"delivered",label:"DELIVERED",color:C.black},
-  {key:"overdue",label:"OVERDUE",color:"#ef4444"},
+  {key:"overdue",label:"OVERDUE",color:"#FF6B6B"},
 ];
 
 const CHANNELS = ["Web","Email","Paid"];
-const CHANNEL_COLORS = { Web:C.red, Email:"#f59e0b", Paid:C.blue };
+const CHANNEL_COLORS = { Web:C.red, Email:"#FFD93D", Paid:C.blue };
 const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const TODAY = new Date().toISOString().slice(0,10);
 
@@ -72,7 +72,7 @@ function AvatarTooltip({ name }) {
 function StatusBadge({status}) {
   const s=PROJECT_STATUSES.find(x=>x.key===status)||PROJECT_STATUSES[0];
   return <span style={{padding:"4px 12px",...rad,background:s.color+"18",color:s.color,fontSize:10,...hd,fontFamily:ff,whiteSpace:"nowrap",display:"inline-flex",alignItems:"center",gap:4}}>
-    {status==="overdue"&&<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2.5" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>}
+    {status==="overdue"&&<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF6B6B" strokeWidth="2.5" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>}
     {s.label}
   </span>;
 }
@@ -85,8 +85,8 @@ function ProgressBar({modules}) {
 function DaysLabel({end, status}) {
   if(status==="delivered") return <span style={{fontSize:10,...hd,color:C.g70,fontFamily:ff}}>COMPLETE</span>;
   const diff=Math.ceil((new Date(end)-new Date(TODAY))/86400000);
-  if(diff<0) return <span style={{fontSize:10,...hd,color:"#ef4444",fontFamily:ff}}>{Math.abs(diff)}d OVERDUE</span>;
-  if(diff<=14) return <span style={{fontSize:10,...hd,color:"#f59e0b",fontFamily:ff}}>{diff}d LEFT</span>;
+  if(diff<0) return <span style={{fontSize:10,...hd,color:"#FF6B6B",fontFamily:ff}}>{Math.abs(diff)}d OVERDUE</span>;
+  if(diff<=14) return <span style={{fontSize:10,...hd,color:"#FFD93D",fontFamily:ff}}>{diff}d LEFT</span>;
   return <span style={{fontSize:10,...hd,color:C.g70,fontFamily:ff}}>{diff}d LEFT</span>;
 }
 
@@ -137,7 +137,7 @@ function ProjectDetail({ project, briefs, onBack, onUpdateStatus }) {
       <div style={{display:"grid",gridTemplateColumns:mob?"repeat(2,1fr)":"repeat(4,1fr)",gap:10}}>
         <div style={{padding:"12px 16px",background:C.g94,...rad,textAlign:"center"}}><div style={{fontSize:22,fontWeight:700,color:C.black,fontFamily:ff}}>{totalBriefs}</div><div style={{fontSize:9,...hd,color:C.g70,fontFamily:ff,marginTop:2}}>TOTAL BRIEFS</div></div>
         <div style={{padding:"12px 16px",background:C.g94,...rad,textAlign:"center"}}><div style={{fontSize:22,fontWeight:700,color:C.green,fontFamily:ff}}>{completeBriefs}</div><div style={{fontSize:9,...hd,color:C.g70,fontFamily:ff,marginTop:2}}>COMPLETE</div></div>
-        <div style={{padding:"12px 16px",background:C.g94,...rad,textAlign:"center"}}><div style={{fontSize:22,fontWeight:700,color:totalBriefs-completeBriefs>0?"#f59e0b":C.g70,fontFamily:ff}}>{totalBriefs-completeBriefs}</div><div style={{fontSize:9,...hd,color:C.g70,fontFamily:ff,marginTop:2}}>IN PROGRESS</div></div>
+        <div style={{padding:"12px 16px",background:C.g94,...rad,textAlign:"center"}}><div style={{fontSize:22,fontWeight:700,color:totalBriefs-completeBriefs>0?"#FFD93D":C.g70,fontFamily:ff}}>{totalBriefs-completeBriefs}</div><div style={{fontSize:9,...hd,color:C.g70,fontFamily:ff,marginTop:2}}>IN PROGRESS</div></div>
         <div style={{padding:"12px 16px",background:C.g94,...rad,textAlign:"center"}}><div style={{display:"flex",alignItems:"center",justifyContent:"center",gap:4}}><div style={{flex:1,maxWidth:80,height:6,background:C.g88,...rad,overflow:"hidden"}}><div style={{height:"100%",width:pct+"%",background:pct===100?C.green:C.blue,...rad}}/></div><span style={{fontSize:14,fontWeight:700,color:pct===100?C.green:C.black,fontFamily:ff}}>{pct}%</span></div><div style={{fontSize:9,...hd,color:C.g70,fontFamily:ff,marginTop:4}}>BRIEF PROGRESS</div></div>
       </div>
     </Card>
@@ -250,7 +250,7 @@ export default function Dashboard({ setView, setJobNum }) {
         <Card style={{padding:"14px 16px",textAlign:"center"}}><div style={{fontSize:mob?22:26,fontWeight:700,color:C.black,fontFamily:ff}}>{stats.total}</div><div style={{fontSize:9,...hd,color:C.g70,fontFamily:ff,marginTop:4}}>TOTAL</div></Card>
         <Card style={{padding:"14px 16px",textAlign:"center"}}><div style={{fontSize:mob?22:26,fontWeight:700,color:C.blue,fontFamily:ff}}>{stats.active}</div><div style={{fontSize:9,...hd,color:C.g70,fontFamily:ff,marginTop:4}}>ACTIVE</div></Card>
         <Card style={{padding:"14px 16px",textAlign:"center"}}><div style={{fontSize:mob?22:26,fontWeight:700,color:C.green,fontFamily:ff}}>{stats.delivered}</div><div style={{fontSize:9,...hd,color:C.g70,fontFamily:ff,marginTop:4}}>DELIVERED</div></Card>
-        <Card style={{padding:"14px 16px",textAlign:"center",border:stats.overdue>0?"1px solid #ef444433":`1px solid ${C.g88}`}}><div style={{fontSize:mob?22:26,fontWeight:700,color:stats.overdue>0?"#ef4444":C.g70,fontFamily:ff}}>{stats.overdue}</div><div style={{fontSize:9,...hd,color:stats.overdue>0?"#ef4444":C.g70,fontFamily:ff,marginTop:4}}>OVERDUE</div></Card>
+        <Card style={{padding:"14px 16px",textAlign:"center",border:stats.overdue>0?"1px solid #FF6B6B33":`1px solid ${C.g88}`}}><div style={{fontSize:mob?22:26,fontWeight:700,color:stats.overdue>0?"#FF6B6B":C.g70,fontFamily:ff}}>{stats.overdue}</div><div style={{fontSize:9,...hd,color:stats.overdue>0?"#FF6B6B":C.g70,fontFamily:ff,marginTop:4}}>OVERDUE</div></Card>
       </div>
 
       <Card style={{padding:"14px 16px"}}>
